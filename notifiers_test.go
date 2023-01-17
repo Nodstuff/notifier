@@ -61,7 +61,7 @@ func TestNotifiers_RemoveNotifier(t *testing.T) {
 			notifiers.RemoveNotifier(tc.notifier.identifier)
 			nn = notifiers.GetNotifier(tc.notifier.identifier)
 			if nn != nil {
-				t.Fatalf("notifier should exist but %s didn't", tc.notifier.identifier)
+				t.Fatalf("notifier should not exist but %s did", tc.notifier.identifier)
 			}
 		})
 	}

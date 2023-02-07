@@ -6,17 +6,17 @@ import "sync"
 type Notifiers map[string]*Notifier
 
 // AddNotifier provides the ability to add a Notifier to the Notifiers collection, it is added using its identifier.
-func (n Notifiers) AddNotifier(notifier *Notifier) {
+func (n *Notifiers) AddNotifier(notifier *Notifier) {
 	n[notifier.identifier] = notifier
 }
 
 // GetNotifier provides the ability to get a Notifier from the Notifiers collection using its identifier.
-func (n Notifiers) GetNotifier(identifier string) *Notifier {
+func (n *Notifiers) GetNotifier(identifier string) *Notifier {
 	return n[identifier]
 }
 
 // RemoveNotifier provides the ability to remove a Notifier from the Notifiers collection using its identifier.
-func (n Notifiers) RemoveNotifier(identifier string) {
+func (n *Notifiers) RemoveNotifier(identifier string) {
 	delete(n, identifier)
 }
 
